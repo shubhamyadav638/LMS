@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header {
+  /* From https://css.glass */
+  background: rgba(23, 4, 54, 0.59);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.9px);
+  -webkit-backdrop-filter: blur(1.9px);
+  border: 1px solid rgba(23, 4, 54, 0.3);
+  & nav {
+    & .circle {
+      background-color: red;
+      padding: 7px;
+      width: 10px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      animation: circle 0.5s linear infinite;
+      -webkit-animation: circle 0.5s linear infinite;
+    }
+  }
+}
+
+@keyframes circle {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: black;
+  }
+}
+
+.hero-section {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  animation: slider 3s linear infinite;
+
+  & h1 {
+    background: linear-gradient(90deg, white, black, red);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  & .box1 {
+    & h1 {
+      background: linear-gradient(90deg, red, green, orange);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  & .box2 {
+    & .img {
+      img {
+        animation: imgbox 1s linear infinite;
+        -webkit-animation: imgbox 10s linear infinite;
+      }
+    }
+  }
+}
+
+/* @keyframes slider {
+  from {
+  }
+
+  to {
+  }
+} */
+
+@keyframes imgbox {
+  0% {
+    box-shadow: 1px 0px 10px 5px red;
+  }
+  25% {
+    box-shadow: 1px 0px 10px 5px green;
+  }
+
+  50% {
+    box-shadow: 1px 0px 10px 5px orange;
+  }
+  75% {
+    box-shadow: 1px 0px 10px 5px black;
+  }
+
+  100% {
+    box-shadow: 1px 0px 10px 5px white;
+  }
+}
+
+.update-course {
+  background: linear-gradient(10deg, yellow, red, orange);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section1 {
+  background-image:url('../public/random bg img/coding bg1.jpg');
+  background-repeat : no-repeat;
+  background-size : cover;
+}
+
+
+
+.section-4 {
+  & .card-1 {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    background-color: #333;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  & .shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      120deg,
+      transparent,
+      rgba(240, 49, 49, 0.5),
+      transparent
+    );
+    animation: shine 0.6s infinite;
+    -webkit-animation: shine 0.6s infinite;
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+
+  50% {
+    left: 100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
